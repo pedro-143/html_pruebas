@@ -1,0 +1,183 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+header{
+    grid-area: my-header;
+    background-color: aqua;
+}
+nav{
+    grid-area: my-nav;
+    background-color: aquamarine;
+}
+main{
+    grid-area: my-main;
+    background-color: rgb(158, 158, 220);
+}
+aside{
+    grid-area: my-aside;
+    background-color: rgb(175, 133, 215);
+}
+footer{
+    grid-area: my-footer;
+    background-color: rgb(195, 140, 140);
+}
+body{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 130px 50px 1fr auto 100px;
+    grid-template-areas: 
+    "my-header"
+    "my-nav"
+    "my-main"
+    "my-aside"
+    "my-footer";
+}
+/*--header--*/
+.logo{
+    width: 100px;
+    height: 100px;
+}
+header{
+    display: flex;
+    padding: 10px;
+}
+h1{
+    text-align: center;
+    padding-top: 30px;
+    padding-left: 10px;
+}
+/*---nav---*/
+nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+nav li{
+    padding: 15px;
+}
+nav a{
+    text-decoration: none;
+}
+.boton_nav_inicio{
+    color: blue;
+}
+/*----section-----*/
+h2, h3{
+    text-align: center;
+    padding: 10px;
+}
+p{
+    padding: 5px;
+}
+section article{
+    background-color: rgb(202, 202, 225);
+    margin: 10px;
+}
+/*----aside----*/
+.img_revista_perros, .img_revista_gatos{
+    width: 200px;
+    height: auto;
+    margin: 10px;
+}
+/*---footer----*/
+footer{
+    display: flex;
+}
+.img_footer{
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+}
+.redes{
+    flex-direction: column;
+    margin-left: 5px;
+}
+.maps_aviso_copyrigth{
+    color: black;
+    text-decoration: none;
+    text-align: right;
+    font-size: 13px;
+}
+/*---pantalla tablet---*/
+@media(min-width: 600px) and (max-width: 1024px){
+    body{
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 150px 1fr 150px;
+        grid-template-rows: 130px 1fr 100px;
+        grid-template-areas: 
+        "my-header my-header my-header"
+        "my-nav my-main my-aside"
+        "my-footer my-footer my-footer";
+    }
+        /*--header--*/
+    h1{
+        text-align: center;
+        padding-left: 20%;
+    }
+        /*---nav---*/
+    nav ul{
+        flex-direction: column
+    }
+        /*----aside----*/
+    .img_revista_perros, .img_revista_gatos{
+        width: 130px;
+        height: auto;
+    }
+        /*---footer----*/
+    footer{
+        display: flex;
+    }
+    .img_footer{
+        margin-top: 10px;
+        width: 30px;
+        height: 30px;
+    }
+    .redes{
+        flex-direction: column;
+        margin-left: 5px;
+    }
+    .maps_aviso_copyrigth{
+        color: black;
+        font-size: 13px;
+        text-decoration: none;
+        float: right;
+        margin-left: 20%;
+    }
+}
+    /*---pantalla portatil---*/
+@media(min-width: 1025px){
+    body{
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 130px 50px 1fr auto 100px;
+        grid-template-areas: 
+        "my-header"
+        "my-nav"
+        "my-main"
+        "my-aside"
+        "my-footer";
+    }
+        /*--header--*/
+    h1{
+        margin-left: 25%;
+        text-align: center;
+    }
+        /*---main---*/
+    main{
+        display: flex;
+    }
+        /*----aside----*/
+    .img_revista_perros, .img_revista_gatos{
+        margin-left: 20%;
+    }    
+        /*---footer----*/
+    .maps_aviso_copyrigth{
+        margin-left: 40%;
+    }
+}

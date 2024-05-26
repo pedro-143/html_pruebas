@@ -1,0 +1,173 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+header{
+    grid-area: my-header;
+    background-color: aqua;
+}
+nav{
+    grid-area: my-nav;
+    background-color: aquamarine;
+}
+main{
+    grid-area: my-main;
+    background-color: rgb(158, 158, 220);
+}
+aside{
+    grid-area: my-aside;
+    background-color: rgb(175, 133, 215);
+}
+footer{
+    grid-area: my-footer;
+    background-color: rgb(195, 140, 140);
+}
+body{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 130px 50px 1fr 100px;
+    grid-template-areas: 
+    "my-header"
+    "my-nav"
+    "my-main"
+    "my-footer";
+}
+
+/*--header--*/
+.logo{
+    width: 100px;
+    height: 100px;
+}
+header{
+    display: flex;
+    padding: 10px;
+}
+h1{
+    padding-top: 30px;
+    padding-left: 10px;
+}
+/*---nav---*/
+nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+nav li{
+    padding: 15px;
+}
+nav a{
+    text-decoration: none;
+}
+.boton_nav_contactos{
+    color: blue;
+}
+/*---main---*/
+.direccion{
+    margin: 20px;
+}
+.mapa{
+    position: relative;
+    margin: 10px;
+    max-width: 450px;
+    max-height: 450px;
+}
+/*---footer----*/
+footer{
+    display: flex;
+}
+.img_footer{
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+}
+.redes{
+    flex-direction: column;
+    margin-left: 5px;
+}
+.maps_aviso_copyrigth{
+    color: black;
+    text-decoration: none;
+    text-align: right;
+    font-size: 13px;
+}
+/*---pantalla tablet---*/
+@media(min-width: 600px) and (max-width: 1024px){
+    body{
+        display: grid;
+        min-height: 100vh;
+        grid-template-columns: 130px 1fr;
+        grid-template-rows: 130px 1fr 100px;
+        grid-template-areas: 
+        "my-header my-header"
+        "my-nav my-main"
+        "my-footer my-footer";
+    }
+        /*--header--*/
+    .logo{  
+        width: 100px;
+        height: 100px;
+    }
+    header{
+        display: flex;
+        padding: 10px;
+    }
+    h1{
+        padding-top: 30px;
+        padding-left: 10px;
+        margin-left: 15%;
+    }
+        /*---main---*/
+    .direccion{
+        margin: 20px;
+    }
+    .mapa{
+        position: relative;
+        margin: auto;
+        max-width: 550px;
+        max-height: 550px;
+    }
+        /*---nav---*/
+    nav ul{
+        flex-direction: column;
+    }
+        /*---footer----*/
+    .maps_aviso_copyrigth{
+        margin-left: 40%;
+    }
+}
+    /*---pantalla portatil---*/
+@media(min-width: 1025px){
+    body{
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 130px 50px 1fr 100px;
+        grid-template-areas: 
+        "my-header"
+        "my-nav"
+        "my-main"
+        "my-footer";
+    }
+        /*--header--*/
+    h1{
+        padding-left: 15%;
+    }
+        /*---main---*/
+    .direccion{
+        margin: 20px;
+    }
+    .mapa{
+        position: relative;
+        margin: auto;
+        max-width: 550px;
+        max-height: 550px;
+    }
+        /*---footer----*/
+    .maps_aviso_copyrigth{
+        margin-left: 40%;
+    }
+
+}
